@@ -5,7 +5,7 @@ function PlaceImg({ place, index = 0, className = null }) {
     return "";
   }
   if (!className) {
-    className = "object-cover h-40 ";
+    className = "object-cover ";
   }
   return (
     <img

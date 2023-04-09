@@ -23,12 +23,12 @@ function BookingsPage() {
             <Link
               key={booking._id}
               to={`/account/bookings/${booking._id}`}
-              className="flex gap-4 bg-gray-200 rounded-2xl overflow-hidden mt-4"
+              className="flex gap-3 bg-gray-200 rounded-2xl overflow-hidden mt-4"
             >
               <div className="w-48">
                 <PlaceImg place={booking.place} />
               </div>
-              <div className="py-3 pr-3 grow">
+              <div className="py-1 pr-3 grow">
                 <h2 className="text-xl">{booking.place.title}</h2>
                 <div className="text-xl">
                   <BookingDates
