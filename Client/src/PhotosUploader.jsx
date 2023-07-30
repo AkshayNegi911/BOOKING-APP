@@ -77,7 +77,7 @@ function PhotosUploader({ addedPhotos, onChange }) {
                 className="cursor-pointer bottom-1 right-1 absolute text-white bg-black p-2  rounded-3xl py-2 px-2"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns="https://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
@@ -98,7 +98,7 @@ function PhotosUploader({ addedPhotos, onChange }) {
               >
                 {Link === addedPhotos[0] && (
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns="https://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     className="w-6 h-6"
@@ -112,7 +112,7 @@ function PhotosUploader({ addedPhotos, onChange }) {
                 )}
                 {Link !== addedPhotos[0] && (
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns="https://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
@@ -137,7 +137,7 @@ function PhotosUploader({ addedPhotos, onChange }) {
             onChange={uploadPhoto}
           ></input>
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}

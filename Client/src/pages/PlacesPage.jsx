@@ -24,7 +24,7 @@ export default function PlacesPage() {
           className="bg-primary text-white py-2 px-6 rounded-full inline-flex gap-1"
         >
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth="1.5"

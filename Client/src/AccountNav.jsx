@@ -25,7 +25,7 @@ function AccountNav() {
       <nav className="w-full flex justify-center mt-8  gap-2 mb-8">
         <Link className={LinkClasses("profile")} to={"/account"}>
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
@@ -42,7 +42,7 @@ function AccountNav() {
         </Link>
         <Link className={LinkClasses("bookings")} to={"/account/bookings"}>
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
@@ -59,7 +59,7 @@ function AccountNav() {
         </Link>
         <Link className={LinkClasses("places")} to={"/account/places"}>
           <svg
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
