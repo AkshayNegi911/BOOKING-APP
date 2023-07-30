@@ -1,11 +1,11 @@
 {
-    "buildCommand": "(cd Client) && (npm i) && (./node_modules/vite/bin/vite.js build)",
+  "buildCommand": "cd client && yarn install && ./node_modules/vite/bin/vite.js build",
     "outputDirectory": "Client/dist",
     "framework": "vite",
     "rewrites": [
       {
-        "source": "/api/(.*)",
-        "destination": "/api/index.js"
+        "source": "/Api/(.*)",
+        "destination": "/Api/index.js"
       },
       {"source": "/(.*)", "destination": "/"}
     ]
