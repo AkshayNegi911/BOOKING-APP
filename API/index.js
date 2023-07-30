@@ -34,12 +34,19 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 
 
 
-app.use(
-  cors({
+const corsConfig = {
     credentials: true,
-    origin: "http://localhost:5173",
-  })
-);
+    origin: true,
+};
+app.use(cors(corsConfig));
+
+
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: "http://localhost:5173",
+//   })
+// );
 
 
 console.log(process.env.MONGO_URL);
