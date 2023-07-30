@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import Image from "./Image";
 
 function PhotosUploader({ addedPhotos, onChange }) {
   const [photoLink, setPhotoLink] = useState("");
@@ -65,8 +66,8 @@ function PhotosUploader({ addedPhotos, onChange }) {
         {addedPhotos.length > 0 &&
           addedPhotos.map((Link) => (
             <div key={Link} className={"relative h-32 flex"}>
-              <img
-                src={"http://localhost:4000/uploads/" + Link}
+              <Image
+                src={Link}
                 className="rounded-2xl w-full object-cover"
                 key={Link}
               />

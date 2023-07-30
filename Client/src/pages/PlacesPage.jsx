@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import AccountNav from "../AccountNav";
 import axios from "axios";
 import PlaceImg from "../PlaceImg";
+import Image from "../Image"
 
 export default function PlacesPage() {
   const [places, setPlaces] = useState([]);
