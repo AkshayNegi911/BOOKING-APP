@@ -7,7 +7,7 @@ export default function Header() {
     <header className="flex justify-between">
       <Link to={"/"} href="" className="flex items-center gap-1">
         <svg
-          xmlns="https://www.w3.org/2000/svg"
+          xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
@@ -30,7 +30,7 @@ export default function Header() {
         <div>Add guests</div>
         <button className="bg-primary text-white p-1 rounded-full">
           <svg
-            xmlns="https://www.w3.org/2000/svg"
+            xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth="1.5"
@@ -51,7 +51,7 @@ export default function Header() {
       >
         <svg
           // hambirger icon
-          xmlns="https://www.w3.org/2000/svg"
+          xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
@@ -67,7 +67,7 @@ export default function Header() {
         <div className="bg-gray-500 text-white rounded-full border border-grey-500 overflow-hidden">
           {/* user icon */}
           <svg
-            xmlns="https://www.w3.org/2000/svg"
+            xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
             className="w-6 h-6 relative top-1"

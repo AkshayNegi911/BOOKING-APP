@@ -4,7 +4,7 @@ export default function BookingDates({ booking, className }) {
   return (
     <div className={"flex gap-1 " + className}>
       <svg
-        xmlns="https://www.w3.org/2000/svg"
+        xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
@@ -24,7 +24,7 @@ export default function BookingDates({ booking, className }) {
       nights:
       <div className="flex gap-1 items-center ml-2">
         <svg
-          xmlns="https://www.w3.org/2000/svg"
+          xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
@@ -42,7 +42,7 @@ export default function BookingDates({ booking, className }) {
       &rarr;
       <div className="flex gap-1 items-center">
         <svg
-          xmlns="https://www.w3.org/2000/svg"
+          xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}

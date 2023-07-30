@@ -15,7 +15,7 @@ function PlaceGallery({ place }) {
               className="flex right-12 top-8 gap-1 bg-white text-black py-2 px-4 rounded-2xl fixed shadow shadow-black "
             >
               <svg
-                xmlns="https://www.w3.org/2000/svg"
+                xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
@@ -92,7 +92,7 @@ function PlaceGallery({ place }) {
         className="flex gap-1 absolute bottom-2 right-2 py-2 px-4 bg-white rounded-2xl shadow shadow-gray-500"
       >
         <svg
-          xmlns="https://www.w3.org/2000/svg"
+          xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
