@@ -32,12 +32,22 @@ app.use(cookieParser());
 app.use(express.json());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
-app.use(
-  cors({
-    credentials: true,
-    origin: "https://localhost:5173",
-  })
-);
+
+app.use(cors({
+  origin: function(origin, callback){
+    return callback(null, true);
+  },
+  optionsSuccessStatus: 200,
+  credentials: true
+}));
+
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: "https://localhost:5173",
+//   })
+// );
+
 
 console.log(process.env.MONGO_URL);
 mongoose.connect(process.env.MONGO_URL);
