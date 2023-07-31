@@ -36,7 +36,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 
 app.use((req, res, next) => {
   // Allow requests from a specific domain
-  res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+  res.header('Access-Control-Allow-Origin', 'https://booking-app-jade-phi.vercel.app/');
 
   // Set the allowed HTTP methods
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
