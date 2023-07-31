@@ -34,15 +34,23 @@ app.use(express.json());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 
-app.use(cors({
-  origin: 'https://booking-app-jade-phi.vercel.app/', // Replace with your web app's domain
-  credentials: true, // Allow requests to include credentials (e.g., cookies, authorization headers)
-}));
+app.use((req, res, next) => {
+  // Allow requests from a specific domain
+  res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
 
-app.options('*', cors({
-  origin: 'https://booking-app-jade-phi.vercel.app/',
-  credentials: true,
-}));
+  // Set the allowed HTTP methods
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+
+  // Set the allowed headers for the requests
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+
+  // Allow requests to include credentials (e.g., cookies, authorization headers)
+  res.header('Access-Control-Allow-Credentials', 'true');
+
+  // Continue to the next middleware
+  next();
+});
+
 
 // app.use(
 //   cors({
