@@ -17,6 +17,7 @@ const Booking = require("./models/Booking.js");
 const bucket = 'akshaybooking-app';
 const mime = require('mime-types');
 
+
 require("dotenv").config();
 
 function getUserDataFromReq(req) {
@@ -33,12 +34,10 @@ app.use(express.json());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 
-
-const corsConfig = {
-    credentials: true,
-    origin: true,
-};
-app.use(cors(corsConfig));
+app.use(cors({
+  origin: 'https://booking-app-jade-phi.vercel.app/', // Replace with your web app's domain
+  credentials: true, // Allow requests to include credentials (e.g., cookies, authorization headers)
+}));
 
 
 // app.use(
