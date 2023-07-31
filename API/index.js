@@ -34,30 +34,14 @@ app.use(express.json());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 
-app.use((req, res, next) => {
-  // Allow requests from a specific domain
-  res.header('Access-Control-Allow-Origin', 'https://booking-app-jade-phi.vercel.app/');
-
-  // Set the allowed HTTP methods
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-
-  // Set the allowed headers for the requests
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-
-  // Allow requests to include credentials (e.g., cookies, authorization headers)
-  res.header('Access-Control-Allow-Credentials', 'true');
-
-  // Continue to the next middleware
-  next();
-});
 
 
-// app.use(
-//   cors({
-//     credentials: true,
-//     origin: "http://localhost:5173",
-//   })
-// );
+app.use(
+  cors({
+    credentials: true,
+    origin: "https://booking-app-jade-phi.vercel.app",
+  })
+);
 
 
 console.log(process.env.MONGO_URL);
