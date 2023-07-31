@@ -35,7 +35,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 
 
 app.use(cors({
-  origin: 'https://booking-app-jade-phi.vercel.app/', // Replace with your web app's domain
+  origin: true, // Replace with your web app's domain
   credentials: true, // Allow requests to include credentials (e.g., cookies, authorization headers)
 }));
 
