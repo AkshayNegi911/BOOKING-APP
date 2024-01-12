@@ -36,15 +36,23 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 
 
 
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: "http://localhost:5173",
+//   })
+// );
+
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:5173",
+    origin: ["https://booking-app-jade-phi.vercel.app/"],
+    
   })
-);
+)
 
 
-console.log(process.env.MONGO_URL);
+// console.log(process.env.MONGO_URL);
 mongoose.connect(process.env.MONGO_URL);
 
 async function uploadToS3(path , originalFilename , mimetype) {
