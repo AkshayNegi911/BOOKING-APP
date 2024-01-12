@@ -16,6 +16,7 @@ const Place = require("./models/Place.js");
 const Booking = require("./models/Booking.js");
 const bucket = 'akshaybooking-app';
 const mime = require('mime-types');
+const path = require('path');  
 
 
 require("dotenv").config();
@@ -76,7 +77,8 @@ async function uploadToS3(path , originalFilename , mimetype) {
   return `http://${bucket}.s3.amazonaws.com/${newFilename}`;
 }
 
-app.get("/api/test", (req, res) => {
+
+app.get("/", (req, res) => {
   try {
     mongoose.connect(process.env.MONGO_URL);
     res.json("text ok");

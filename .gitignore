@@ -1,5 +1,5 @@
 .idea
 Api/node_modules
 Api/.env
-Api/uploads/*
+Api/Uploads/*
 Client/node_modules
