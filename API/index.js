@@ -47,7 +47,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(
   cors({
     credentials: true,
-    origin: ["https://booking-app-frontend-wine.vercel.app"],
+    origin: ["https://booking-app-frontend-wine.vercel.app","http://localhost:5173"],
     methods: ["POST", "GET","PUT"],
   })
 )
@@ -78,13 +78,6 @@ async function uploadToS3(path , originalFilename , mimetype) {
   return `http://${bucket}.s3.amazonaws.com/${newFilename}`;
 }
 
-// Serve the static files (build output) from the 'Client' subfolder of the parent directory
-app.use(express.static(path.join(__dirname, '../Client')));
-
-// Catch-all route to serve 'Index.html' for any route that doesn't match a static file
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../Client','index.html'));
-});
 
 app.get("/", (req, res) => {
   try {
