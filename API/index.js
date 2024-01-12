@@ -48,6 +48,7 @@ app.use(
   cors({
     credentials: true,
     origin: ["https://booking-app-frontend-wine.vercel.app"],
+    methods: ["POST", "GET","PUT"],
   })
 )
 
