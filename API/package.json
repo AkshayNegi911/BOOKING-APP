@@ -106,7 +106,10 @@
   },
   "scripts": {
     "nodemon": "nodemon index.js",
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "vercel-build":"npm install",
+    "vercel-start":"node index.js",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC"

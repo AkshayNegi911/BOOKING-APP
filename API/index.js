@@ -47,7 +47,6 @@ app.use(
   cors({
     credentials: true,
     origin: ["https://booking-app-jade-phi.vercel.app/"],
-    
   })
 )
 
