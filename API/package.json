@@ -108,8 +108,11 @@
     "nodemon": "nodemon index.js",
     "server": "nodemon index.js",
     "vercel-build":"npm install",
-    "vercel-start":"node index.js",
-    "start": "node index.js"
+    "vercel-start":"nodemon index.js",
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "build": "[my-framework] build --output public"
   },
   "author": "",
   "license": "ISC"
