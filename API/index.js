@@ -78,9 +78,6 @@ async function uploadToS3(path , originalFilename , mimetype) {
   return `http://${bucket}.s3.amazonaws.com/${newFilename}`;
 }
 
-app.get('*',(req,res) =>{
-  res.sendFile(path.join(__dirname+'/temp.html'));
-})
 
 app.get("/", (req, res) => {
   try {
@@ -302,6 +299,11 @@ app.get("/api/bookings", async (req, res) => {
   const userData = await getUserDataFromReq(req);
   res.json(await Booking.find({ user: userData.id }).populate('place'));
 });
+
+app.get('*',(req,res) =>{
+  res.sendFile(path.join(__dirname+'/temp.html'));
+})
+
 
 // akshay912 - password mongo
 app.listen(4000, () => {
