@@ -47,7 +47,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(
   cors({
     credentials: true,
-    origin: ["https://booking-app-frontend-wine.vercel.app","http://localhost:5173"],
+    origin: ["https://booking-app-frontend-mr0ps77gu-akshaynegi911.vercel.app/","http://localhost:5173"],
     methods: ["POST", "GET","PUT"],
   })
 )
