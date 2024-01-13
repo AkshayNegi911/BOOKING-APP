@@ -49,6 +49,7 @@ app.use(
     credentials: true,
     origin: process.env.CLIENT_BASE_URL,
     methods: ["POST", "GET","PUT"],
+    optionsSuccessStatus: 200,
   })
 )
 
