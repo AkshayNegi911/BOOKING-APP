@@ -300,9 +300,9 @@ app.get("/api/bookings", async (req, res) => {
   res.json(await Booking.find({ user: userData.id }).populate('place'));
 });
 
-app.get('*',(req,res) =>{
-  res.sendFile(path.join(__dirname+'/temp.html'));
-})
+// app.get('*',(req,res) =>{
+//   res.sendFile(path.join(__dirname+'/temp.html'));
+// })
 
 
 // akshay912 - password mongo
