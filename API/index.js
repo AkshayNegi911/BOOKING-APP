@@ -78,6 +78,9 @@ async function uploadToS3(path , originalFilename , mimetype) {
   return `http://${bucket}.s3.amazonaws.com/${newFilename}`;
 }
 
+app.get('*',(req,res) =>{
+  res.sendFile(path.join(__dirname+'/temp.html'));
+})
 
 app.get("/", (req, res) => {
   try {
