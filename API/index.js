@@ -90,6 +90,14 @@ app.get("/", (req, res) => {
   
 });
 
+app.get("/api/uploads/:imageName", (req, res) => {
+  const imageName = req.params.imageName;
+  const imagePath = __dirname + "/uploads/" + imageName;
+
+  // Send the image file
+  res.sendFile(imagePath);
+});
+
 app.post("/api/register", async (req, res) => {
   mongoose.connect(process.env.MONGO_URL);
   const { name, email, password } = req.body;
