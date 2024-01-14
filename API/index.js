@@ -32,7 +32,7 @@ function getUserDataFromReq(req) {
 
 app.use(cookieParser());
 app.use(express.json());
-app.use("/uploads", express.static(path.join(__dirname + "/uploads")));
+app.use("/Uploads", express.static(path.join(__dirname + "/Uploads")));
 
 
 
@@ -92,7 +92,7 @@ app.get("/", (req, res) => {
 
 app.get("/api/uploads/:imageName", (req, res) => {
   const imageName = req.params.imageName;
-  const imagePath = path.join(__dirname + "/uploads/" + imageName);
+  const imagePath = path.join(__dirname + "/Uploads/" + imageName);
 
   // Send the image file
   res.sendFile(imagePath);
