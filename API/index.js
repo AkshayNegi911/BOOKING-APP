@@ -234,6 +234,7 @@ app.get("/api/user-places", (req, res) => {
     } else {
       // Handle the case when 'userData' or 'id' is undefined
       console.error("userData or id is undefined");
+      console.log(userData);
     }
     // const { id } = userData;
   });
