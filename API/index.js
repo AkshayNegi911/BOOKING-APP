@@ -154,7 +154,7 @@ app.get("/api/profile", (req, res) => {
 });
 
 app.post("/api/logout", (req, res) => {
-  res.cookie("token", "").json(true);
+  res.cookie("token", "",{ secure: true, sameSite: 'None' }).json(true);
 });
 
 app.post("/api/upload-by-link", async (req, res) => {
@@ -221,16 +221,6 @@ app.post("/api/places", (req, res) => {
     res.json(placeDoc);
   });
 });
-
-// app.get("/api/user-places", (req, res) => {
-//   mongoose.connect(process.env.MONGO_URL);
-//   const { token } = req.cookies;
-//   jwt.verify(token, jwtSecret, {}, async (err, userData) => {
-//     const { id } = userData;
-//     res.json(await Place.find({ owner: id }));
-//   });
-// });
-
 
 app.get("/api/user-places", async (req, res) => {
   try {
