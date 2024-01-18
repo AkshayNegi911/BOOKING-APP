@@ -225,17 +225,17 @@ app.post("/api/places", (req, res) => {
 app.get("/api/user-places", (req, res) => {
   mongoose.connect(process.env.MONGO_URL);
   const { token } = req.cookies;
-
-  
   jwt.verify(token, jwtSecret, {}, async (err, userData) => {
-    const { id } = userData;
-    console.log("userData:", userData);
-    try{
+    if (userData && userData.id) {
+      // Destructure the 'id' property
+      const { id } = userData;
+      // Rest of your code
       res.json(await Place.find({ owner: id }));
+    } else {
+      // Handle the case when 'userData' or 'id' is undefined
+      console.error("userData or id is undefined");
     }
-    catch(e){
-      console.error("Error:", error);
-    }
+    // const { id } = userData;
   });
 });
 
