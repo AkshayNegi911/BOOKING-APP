@@ -222,23 +222,46 @@ app.post("/api/places", (req, res) => {
   });
 });
 
-app.get("/api/user-places", (req, res) => {
-  mongoose.connect(process.env.MONGO_URL);
-  const { token } = req.cookies;
-  jwt.verify(token, jwtSecret, {}, async (err, userData) => {
-    if (userData && userData.id) {
-      // Destructure the 'id' property
-      const { id } = userData;
-      // Rest of your code
-      res.json(await Place.find({ owner: id }));
-    } else {
-      // Handle the case when 'userData' or 'id' is undefined
-      // console.error("userData or id is undefined");
-      console.error(userData);
+// app.get("/api/user-places", (req, res) => {
+//   mongoose.connect(process.env.MONGO_URL);
+//   const { token } = req.cookies;
+//   jwt.verify(token, jwtSecret, {}, async (err, userData) => {
+//     const { id } = userData;
+//     res.json(await Place.find({ owner: id }));
+//   });
+// });
+
+
+app.get("/api/user-places", async (req, res) => {
+  try {
+    mongoose.connect(process.env.MONGO_URL);
+    const { token } = req.cookies;
+    
+    if (!token) {
+      return res.status(401).json({ error: "Unauthorized: Token not provided" });
     }
-    // const { id } = userData;
-  });
+
+    jwt.verify(token, jwtSecret, {}, async (err, userData) => {
+      if (err) {
+        console.error("Token verification failed:", err);
+        return res.status(401).json({ error: "Unauthorized: Invalid token" });
+      }
+
+      if (userData && userData.id) {
+        const { id } = userData;
+        const userPlaces = await Place.find({ owner: id });
+        res.json(userPlaces);
+      } else {
+        console.error("userData or id is undefined");
+        res.status(401).json({ error: "Unauthorized: User data missing or invalid" });
+      }
+    });
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  } 
 });
+
 
 app.get("/api/places/:id", async (req, res) => {
   mongoose.connect(process.env.MONGO_URL);
