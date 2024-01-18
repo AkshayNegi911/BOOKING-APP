@@ -20,7 +20,7 @@ axios.defaults.withCredentials = true;
 function App() {
   return (
     <UserContextProvider>
-    <SetCookieComponent />
+    {/* <SetCookieComponent /> */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<IndexPage />} />
