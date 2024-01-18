@@ -12,7 +12,6 @@ import PlacesFormPage from "./pages/PlacesFormPage";
 import PlacePage from "./pages/PlacePage";
 import BookingsPage from "./pages/BookingsPage";
 import BookingPage from "./pages/BookingPage";
-// import SetCookieComponent from "./SetCookieComponent.jsx";
 
 axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
 axios.defaults.withCredentials = true;
@@ -20,7 +19,6 @@ axios.defaults.withCredentials = true;
 function App() {
   return (
     <UserContextProvider>
-    {/* <SetCookieComponent /> */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<IndexPage />} />
