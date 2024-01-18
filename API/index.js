@@ -233,8 +233,8 @@ app.get("/api/user-places", (req, res) => {
       res.json(await Place.find({ owner: id }));
     } else {
       // Handle the case when 'userData' or 'id' is undefined
-      console.error("userData or id is undefined");
-      console.log(userData);
+      // console.error("userData or id is undefined");
+      console.error(userData);
     }
     // const { id } = userData;
   });
